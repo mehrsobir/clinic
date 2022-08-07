@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Хизматрасониҳо {% endblock %}
+
+{% block body %}
+
+{% for x in services %}
+<br>
+<img height="200" width="300" src="/static/images/{{x.img}}" alt=""><br>
+<strong>
+    {{x.name}}
+</strong>
+<small>
+    {{x.group}}
+</small>
+
+
+{% endfor %}
+
+{% endblock %}

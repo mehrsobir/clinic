@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %} Духтурҳо {% endblock %}
+
+{% block body %}
+
+{% for x in doctors %}
+<br>
+<img height="200" width="300" src="/static/images/{{x.img}}" alt=""><br>
+<br>
+<strong>
+    {{x.name}}
+</strong>
+<br>
+<small>
+    {% for s in x.dw.all %}
+        {{s.name}},
+    {% endfor %}
+</small>
+<br>
+<p>
+    {{x.about}}
+</p>
+
+<strong>
+    {{x.yw}} worked
+</strong>
+
+{% endfor %}
+
+{% endblock %}

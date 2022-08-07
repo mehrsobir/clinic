@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Шарикони мо {% endblock %}
+
+{% block body %}
+
+{% for x in partners %}
+
+<img height="200" width="300" src="/static/images/{{x.img}}" alt=""><br>
+<strong>
+    {{x.name}}
+</strong><br>
+<small>
+    {{x.city}},
+    {{x.country}}
+</small>
+
+{% endfor %}
+
+{% endblock %}
