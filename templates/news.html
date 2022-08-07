@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} Хабарҳо {% endblock %}
+
+{% block body %}
+<br>
+<h1>Хабарҳо</h1>
+<br>
+{% for x in news %}
+
+    <br>
+    <img height="200" width="300" src="/static/images/{{x.img}}" alt="">
+    <strong>{{x.title}}</strong>
+    <small> {{x.txt}} </small>
+
+{% endfor %}
+
+
+
+<div>
+    {% for x in news.paginator.page_range %}
+
+        <a href="?page={{x}}">{{x}}</a>
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}
