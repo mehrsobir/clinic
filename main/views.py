@@ -5,9 +5,9 @@ from .models import *
 
 def home(request):
     news = News.objects.order_by("-id")[:4]
-    doctors = Doctors.objects.order_by("-id")
-    partners = Partners.objects.order_by("-id")
-    images = Images.objects.order_by("-id")
+    doctors = Doctor.objects.order_by("-id")
+    partners = Partner.objects.order_by("-id")
+    images = Image.objects.order_by("-id")
 
     return render(request, 'home.html', {
         'news': news,

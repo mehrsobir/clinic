@@ -9,24 +9,32 @@ class News(models.Model):
     def __str__(self):
         return self.title
 
-class DoctorsWorks(models.Model):
+class ServiceGroup(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
-class Doctors(models.Model):
+class Service(models.Model):
+    name = models.CharField(max_length=100)
+    group = models.ForeignKey(ServiceGroup, on_delete=models.DO_NOTHING)
+    def __str__(self):
+        return self.name
+
+
+class Doctor(models.Model):
     img = models.ImageField()
 
     name = models.CharField(max_length=100)
-    dw = models.ManyToManyField(DoctorsWorks)
+    dw = models.ManyToManyField(Service)
     about = models.TextField()
     yw = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
 
-class Partners(models.Model):
+
+class Partner(models.Model):
     img = models.ImageField()
     name = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
@@ -35,33 +43,9 @@ class Partners(models.Model):
     def __str__(self):
         return self.name + ' - ' + self.city + ', ' + self.country
 
-class Images(models.Model):
+
+class Image(models.Model):
     img = models.ImageField()
 
     def __str__(self):
         return str(self.img)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
