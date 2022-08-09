@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Дар бораи мо {% endblock %}
+
+{% block body %}
+
+{% for x in about %}
+
+<img height="500" width="700" src="/static/images/{{x.img}}" alt=""><br>
+<strong>
+    {{x.about}}
+</strong>
+
+{% endfor %}
+
+{% endblock %}

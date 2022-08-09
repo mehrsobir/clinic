@@ -16,6 +16,8 @@ class ServiceGroup(models.Model):
         return self.name
 
 class Service(models.Model):
+    img = models.ImageField()
+
     name = models.CharField(max_length=100)
     group = models.ForeignKey(ServiceGroup, on_delete=models.DO_NOTHING)
     def __str__(self):
@@ -32,6 +34,14 @@ class Doctor(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class About(models.Model):
+    img = models.ImageField()
+    about = models.TextField()
+    x = 'about'
+    def __str__(self):
+        return self.x
 
 
 class Partner(models.Model):

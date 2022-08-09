@@ -25,18 +25,39 @@ def news(request):
         'news': news
     })
 
-def services(request):
-    return render(request, 'services.html')
 
 def doctors(request):
-    return render(request, 'doctors.html')
+    doctors = Doctor.objects.order_by("id")
+
+    return render(request, 'doctors.html', {
+        'doctors': doctors
+    })
+    
+def services(request):
+    services = Service.objects.order_by("id")
+
+    return render(request, 'services.html', {
+        'services': services
+    })
 
 def about(request):
-    return render(request, 'about.html')
+    about = About.objects.all()
+
+    return render(request, 'about.html', {
+        'about': about
+    })
 
 def ourpartners(request):
-    return render(request, 'ourpartners.html')
+    partners = Partner.objects.all()
+
+    return render(request, 'ourpartners.html', {
+        'partners': partners
+    })
 
 def fotogalereya(request):
-    return render(request, 'fotogalereya.html')
+    fotogalereya = Image.objects.order_by("-id")
+
+    return render(request, 'fotogalereya.html', {
+        'fotogalereya': fotogalereya
+    })
 
