@@ -5,19 +5,21 @@ from .models import *
 
 def home(request):
     news = News.objects.order_by("-id")[:4]
-    doctors = Doctor.objects.order_by("-id")
-    partners = Partner.objects.order_by("-id")
-    images = Image.objects.order_by("-id")
+    services = Service.objects.order_by("-id")[:4]
+    doctors = Doctor.objects.order_by("-id")[:4]
+    partners = Partner.objects.order_by("-id")[:4]
+    images = Image.objects.order_by("-id")[:4]
 
     return render(request, 'home.html', {
         'news': news,
+        'services': services,
         'doctors': doctors,
         'partners': partners,
         'images': images
     })
 
 def news(request):
-    Pag = Paginator(News.objects.order_by("-id"), 2)
+    Pag = Paginator(News.objects.order_by("-id"), 12)
     page = request.GET.get('page')
     news = Pag.get_page(page)
 

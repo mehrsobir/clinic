@@ -1,66 +1,188 @@
-{% extends 'base.html' %}
-{% block title %} Саҳифаи аввал {% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Montserrat:ital,wght@0,600;1,600&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Саҳифаи аввал</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__top">
+            <div class="header__title">DSClinic</div>
+            <div class="header__menu">
+                <li class="header__menulist"><a href="{% url 'news' %}" class="header__bottom">Хабарҳо</a></li>
+                <li class="header__menulist"><a href="" class="header__bottom">Хизматрасониҳо</a></li>
+                <li class="header__menulist"><a href="" class="header__bottom">Табибон</a></li>
+                <li class="header__menulist"><a href="" class="header__bottom">Дар бораи мо</a></li>
+                <li class="header__menulist"><a href="" class="header__bottom">Шарикони мо</a></li>
+                <li class="header__menulist"><a href="" class="header__bottom">Фотогалерея</a></li>
+            </div>
+        </div>
+        <div class="header__name"><h1 class="header__nameh">Маркази устухондармонии “ Закариёи Розӣ”</h1></div>
+        <div class="header__down">
+            <div class="header__contacts">
+                <div class="header__contacts1">
+                    <div class="header__contacts1-top">
+                        <div class="header__contacts1-toptitle">Тамос бо мо</div>
+                        <div class="header__contacts1-toptext">
+                            <li class="header__contacts1-topnam">
+                                <a href="" class="header__contacts1-top-icon"><img src="/static/images/icons8-phone-100.png" alt="" width="31px"height="31px"></a>
+                                <a href="" class="header__contacts1-top-icon"><img src="/static/images/icons8-whatsapp-100.png" alt="" width="31px"height="31px"></a>
+                                <a href="" class="header__contacts1-top-icon"><img src="/static/images/icons8-viber-100.png" alt="" width="31px"height="31px"></a>
+                                <a href="" class="header__contacts1-top-icon"><img src="/static/images/icons8-telegram-100.png" alt="" width="31px"height="31px"></a>
+                            </li>
+                            <li class="header__contacts1-topnam">+992 918-78-05-55</li>
+                            <li class="header__contacts1-topnam">+992 918-78-05-55</li>
+                        </div>
+                    </div>
+                    <div class="header__contacts1-top">
+                        <div class="header__contacts1-toptitle">Имейл</div>
+                        <div class="header__contacts1-toptext">
+                            <li class="header__contacts1-topnam">muzr@gmail.com</li>
+                            <li class="header__contacts1-topnam">
+                                <a href="" class="header__contacts1-top-icon"><img src="/static/images/icons8-facebook-100.png" alt="" width="31px"height="31px"></a>
+                                <a href="" class="header__contacts1-top-icon"><img src="/static/images/icons8-instagram-100.png" alt="" width="31px"height="31px"></a>
+                                <a href="" class="header__contacts1-top-icon"><img src="/static/images/icons8-youtube-100.png" alt="" width="31px"height="31px"></a>
+                                <a href="" class="header__contacts1-top-icon"><img src="/static/images/icons8-twitter-100.png" alt="" width="31px"height="31px"></a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__contacts2">
+                    <div class="header__contacts2-info">
+                        <li class="header__contacts2-title">
+                            <img src="/static/images/icons8-clock-90.png" alt="" width="31px"height="31px">
+                            <h2 class="header__contacts2-titleh2">Реҷаи корӣ</h2>
+                        </li>
+                        <li class="header__contacts2-text">
+                            <h2 class="header__contacts2-texth2">Душанбе - Шанбе</h2>
+                            <h3 class="header__contacts2-texth3">Аз 8-00 то 19-00</h3>
+                        </li>
+                        <li class="header__contacts2-text">
+                            <h2 class="header__contacts2-texth2">Якшанбе</h2>
+                            <h3 class="header__contacts2-texth3">Истироҳат</h3>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="header__text">Инҷо шиори ассоси беморхона меояд. Инҷо шиори ассоси беморхона меояд. Инҷо шиори ассоси беморхона меояд. Инҷо шиори ассоси беморхона меояд </div>
+        </div>
+    </header>
+    <section class="new">
+
+        <article class="news__title">Хабарҳо</article>
+        <article class="news__center">
+            {% for x in news %}
+                <div class="news__news">
+                    <img src="/static/images/{{x.img}}" alt="" class="news__new-img">
+                    <div class="news__news-title-div"><h2 class="news__news-title">{{x.title}}</h2></div>
+                </div>
+            {% endfor %}
+        </article>
+        <article class="news__click">
+            <a href="{% url 'news' %}" class="news__click-bot">Бештар -></a>
+        </article>
+    </section>
+    <section class="new">
+        <article class="news__title">Хизматрасониҳо</article>
+        <article class="news__center">
+            {% for x in services %}
+                <div class="news__news">
+                    <img src="/static/images/{{x.img}}" alt="" class="news__new-img">
+                    <div class="news__news-title-div"><h2 class="news__news-title">{{x.name}}</h2></div>
+                </div>
+            {% endfor %}
+        </article>
+        <article class="news__click">
+            <a href="{% url 'services' %}" class="news__click-bot">Бештар -></a>
+        </article>
+    </section>
+    <section class="docs">
+        <article class="news__title">Табибон</article>
+        <article class="docs__center-art">
+            {% for x in doctors %}
+                <div class="docs__center">
+                    <img style="background: url(/static/images/{{ x.img }}) center / cover no-repeat" alt="" class="docs__center-img">
+                    <h2 class="docs__center-title">{{ x.name }}</h2>
+                    <h3 class="docs__center-text">
+                        {% for d in x.dw.all %}
+                            {{d.name}},
+                        {% endfor %}
+                    </h3>
+                </div>
+            {% endfor %}
+        </article>
+        <article class="news__click">
+            <a href="{% url 'doctors' %}" class="news__click-bot" style="margin-top: 10px;">Бештар -></a>
+        </article>
+    </section>
+    <section class="partner">
+        <article class="news__title">Шарикони мо</article>
+        <article class="partner__center-art">
+            {% for x in partners %}
+                <div class="partner__center">
+                    <img src="/static/images/Okayama_Red_Cross_Hospital.jpg" alt="" class="partner__center-img">
+                    <h2 class="partner__center-title">{{x.name}}</h2>
+                    <h3 class="partner__center-text">{{x.city}}, {{x.country}}</h3>
+                </div>
+            {% endfor %}
+        </article>
+        <article class="partner__click">
+            <a href="" class="partner__click-bot">Бештар -></a>
+        </article>
+    </section>
+    <section class="have">
+        <article class="news__title"></article>
+        <article class="have__imgs">
+            <div class="have__imgs-div">
+                <img src="./img/main.jpg" alt="" class="have__img have__img1 wow animate__animated animate__slideInLeft">
+                <img src="./img/main.jpg" alt="" class="have__img have__img2 wow animate__animated animate__slideInRight">
+                <img src="./img/main.jpg" alt="" class="have__img have__img2 wow animate__animated animate__slideInLeft">
+                <img src="./img/main.jpg" alt="" class="have__img have__img1 wow animate__animated animate__slideInRight">
+            </div>
+        </article>
+        <article class="have__click">
+            <a href="" class="have__click-bot">Бештар -></a>
+        </article>
+    </section>
+    <section class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1061.3287074241211!2d68.80820586549648!3d38.56274050118388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b5d1d2ae15817f%3A0x588b03fdcc7a8589!2z0JDQv9GC0LXQutCwINCd0LjRiNC-0L0uIFBoYXJtYWN5!5e0!3m2!1sru!2s!4v1644650350036!5m2!1sru!2s" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    <footer class="footer">
+        <article class="footer__c">© 2022. Тамоми ҳуқуқҳо маҳфузанд</article>
+        <article class="footer__ligo">
+            <div class="footer__title">DSClinic</div>
+            <div class="footer__name">Маркази устухондармонии “ Закариёи Розӣ”</div>
+        </article>
+        <article class="footer__loc">Нишони мо: Шаҳри Душанбе, куҷаи X. 003 Гардиши беморхонаи “???”</article>
+    </footer>
+</body>
+</html>
 
-{% block body %}
 
-<h1>News</h1>
-{% for x in news %}
-    <br>
-    <img height="200" width="300" src="/static/images/{{x.img}}" alt="">
-    <strong>{{x.title}}</strong>
-    <small> {{x.txt}} </small>
 
-{% endfor %}
 
-<h1>Doctors</h1>
-{% for x in doctors %}
 
-<br>
-<img height="200" width="300" src="/static/images/{{x.img}}" alt=""><br>
-<br>
-<strong>{{x.name}}</strong>
-<br>
 
-<p>
-    {% for d in x.dw.all %}
 
-        {{d.name}}
 
-    {% endfor %}
-</p>
 
 
 
 
-<br>
-<small> {{x.about}} </small>
-<br>
 
 
-<strong>{{x.yw}} worked</strong>
 
-{% endfor %}
 
-<br>
-<h1>Our partners</h1>
-<br>
-{% for x in partners %}
-<br>
-<img height="200" width="300" src="/static/images/{{x.img}}" alt=""><br>
-<strong>{{x.name}}</strong>
-<br>
-<small>{{x.city}}, {{x.country}}</small>
-{% endfor %}
 
-<br>
-<h1>Images</h1>
-<br>
-{% for x in images %}
 
-<br>
-<img height="200" width="300" src="/static/images/{{x.img}}" alt=""><br>
 
-{% endfor %}
 
 
 
@@ -81,41 +203,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% endblock %}
 
 
 
