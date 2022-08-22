@@ -3,11 +3,15 @@
 
 {% block body %}
 
-{% for x in fotogalereya %}
+<section class="have">
+        <article class="news__title">Фотогалерея</article>
+        <article class="have__blocks">
+                <img style="background: url(/static/images/main.jpg) center / cover no-repeat" alt="" class="have__img have__img1">
+                <img style="background: url(/static/images/main.jpg) center / cover no-repeat" alt="" class="have__img have__img2">
+                <img style="background: url(/static/images/main.jpg) center / cover no-repeat" alt="" class="have__img have__img2">
+                <img style="background: url(/static/images/main.jpg) center / cover no-repeat" alt="" class="have__img have__img1">
 
-
-<img height="200" width="300" src="/static/images/{{x.img}}" alt="">
-
-{% endfor %}
+        </article>
+    </section>
 
 {% endblock %}

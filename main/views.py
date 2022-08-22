@@ -6,7 +6,7 @@ from .models import *
 def home(request):
     news = News.objects.order_by("-id")[:4]
     services = Service.objects.order_by("-id")[:4]
-    doctors = Doctor.objects.order_by("-id")[:4]
+    doctors = Doctor.objects.order_by("id")[:4]
     partners = Partner.objects.order_by("-id")[:4]
     images = Image.objects.order_by("-id")[:4]
 
@@ -27,6 +27,13 @@ def news(request):
         'news': news
     })
 
+
+def news_detail(request, id):
+    n = News.objects.get(id=id)
+
+    return render(request, 'news_detail.html', {
+        'x': n
+    })
 
 def doctors(request):
     doctors = Doctor.objects.order_by("id")
