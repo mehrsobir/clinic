@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.conf import settings
 
 from .models import *
 
 def home(request):
     news = News.objects.order_by("-id")[:4]
-    services = Service.objects.order_by("-id")[:4]
+    services = Service.objects.order_by("id")[:4]
     doctors = Doctor.objects.order_by("id")[:4]
     partners = Partner.objects.order_by("-id")[:4]
     images = Image.objects.order_by("-id")[:4]

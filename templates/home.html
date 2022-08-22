@@ -9,12 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Montserrat:ital,wght@0,600;1,600&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Саҳифаи аввал</title>
+    <title>Асосӣ</title>
 </head>
 <body>
     <header class="header">
         <div class="header__top">
-            <img src="/static/images/photo_2022-08-18_19-41-17.png" alt="" width="200px" height="85px">
+            <img src= "{% static 'images/orthop.png' %}" alt="" width="200px" height="85px">
             <div class="header__menu">
                 <li class="header__menulist"><a href="{% url 'news' %}" class="header__bottom">Хабарҳо</a></li>
                 <li class="header__menulist"><a href="{% url 'services' %}" class="header__bottom">Хизматрасониҳо</a></li>
@@ -60,9 +60,9 @@
                         </div>
                     </div>
                     <div class="header__contacts1-top">
-                        <div class="header__contacts1-toptitle">Имейл</div>
+                        <div class="header__contacts1-toptitle">email:</div>
                         <div class="header__contacts1-toptext">
-                            <li class="header__contacts1-topnam">muzr@gmail.com</li>
+                            <li class="header__contacts1-topnam">tajorthopedics@gmail.com</li>
                             <li class="header__contacts1-topnam">
                                 <a href="" class="header__contacts1-top-icon"><img src="/static/images/icons8-facebook-100.png" alt="" class="header__contacts1-top-img" ></a>
                                 <a href="" class="header__contacts1-top-icon"><img src="/static/images/icons8-instagram-100.png" alt="" class="header__contacts1-top-img" ></a>
@@ -73,7 +73,8 @@
                     </div>
                 </div>
             </div>
-            <div class="header__text">Инҷо шиори ассоси беморхона меояд. Инҷо шиори ассоси беморхона меояд. Инҷо шиори ассоси беморхона меояд. Инҷо шиори ассоси беморхона меояд </div>
+            <div class="header__text">Барои ҳар як давлат солимии аҳли ҷомеа зарур мебошад. Аз ин рӯ, мо бояд халқамонро солим нигоҳ дорем ва барои
+                тандурустии он тамоми шароитро фароҳам оварем. <br> Эмомалӣ Раҳмон </div>
         </div>
     </header>
     <section class="new">
@@ -92,7 +93,7 @@
             <a href="{% url 'news' %}" class="news__click-bot">Бештар -></a>
         </article>
     </section>
-    <section class="new">
+    <section class="serv">
         <article class="news__title">Хизматрасониҳо</article>
         <article class="news__center">
             {% for x in services %}
@@ -144,10 +145,10 @@
         <article class="news__title">Фотогалерея</article>
         <article class="have__imgs">
             <div class="have__imgs-div">
-                <img src="./img/main.jpg" alt="" class="have__img have__img1 wow animate__animated animate__slideInLeft">
-                <img src="./img/main.jpg" alt="" class="have__img have__img2 wow animate__animated animate__slideInRight">
-                <img src="./img/main.jpg" alt="" class="have__img have__img2 wow animate__animated animate__slideInLeft">
-                <img src="./img/main.jpg" alt="" class="have__img have__img1 wow animate__animated animate__slideInRight">
+                <img src= "{% static 'images/main.jpg' %}" alt="" class="have__img have__img1 wow animate__animated animate__slideInLeft">
+                <img src= "{% static 'images/main.jpg' %}" alt="" class="have__img have__img2 wow animate__animated animate__slideInRight">
+                <img src= "{% static 'images/main.jpg' %}" alt="" class="have__img have__img2 wow animate__animated animate__slideInLeft">
+                <img src= "{% static 'images/main.jpg' %}" alt="" class="have__img have__img1 wow animate__animated animate__slideInRight">
             </div>
         </article>
         <article class="have__click">
@@ -160,10 +161,10 @@
     <footer class="footer">
         <article class="footer__c">© 2022. Тамоми ҳуқуқҳо маҳфузанд</article>
         <article class="footer__ligo">
-            <div class="footer__title"></div>
-            <div class="footer__name">Маркази устухондармонии “ Закариёи Розӣ”</div>
+            <div class="footer__title"><a href="{% url 'home' %}"><img src= "{% static 'images/orthop.png' %}" alt="" width="200px" height="85px"></a></div>
+            <div class="footer__name">Маркази тиббии “Ортопедияи муосир”</div>
         </article>
-        <article class="footer__loc">Нишони мо: Шаҳри Душанбе, куҷаи X. 003 Гардиши беморхонаи “???”</article>
+        <article class="footer__loc">Нишони мо: <br> Шаҳри Душанбе, кӯчаи Бухоро 51 (Гардиши беморхонаи “Ёрии таъҷилӣ)”</article>
     </footer>
 
     <script src="/static/js/main.js"></script>

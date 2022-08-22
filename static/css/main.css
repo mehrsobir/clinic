@@ -83,9 +83,9 @@ header{
 }
 .header__contacts1-toptitle {
     font-family: 'Roboto Condensed';
-    font-size: 32px;
+    font-size: 22px;
     font-weight: 600;
-    line-height: 47px;
+    line-height: 40px;
     letter-spacing: 0em;
     text-align: left;
 
@@ -94,7 +94,7 @@ header{
     font-family: Oswald;
     font-size: 16px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 20px;
     letter-spacing: 0em;
     text-align: left;
 }
@@ -140,7 +140,7 @@ header{
 }
 .header__text{
     width: 350px;
-    height: 200px;
+    height: 210px;
 }
 .header__contacts2 {
     width: 350px;
@@ -168,19 +168,28 @@ header{
     font-family: Montserrat;
     font-size: 18px;
     font-weight: 600;
-    line-height: 30px;
+    line-height: 25px;
     letter-spacing: 0em;
     text-align: center;
     margin: 100px 0 0 0;
 }
 
 .new {
-    margin-top: 80px;
+    margin-top: 70px;
     width: 1403px;
     height: 350px;
     background: #E9E4E4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+.serv {
+    margin-top: 30px;
+    width: 1403px;
+    height: 350px;
+    background: #E9E4E4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .news__title {
     font-family: 'Roboto Condensed';
     font-size: 40px;
@@ -433,13 +442,13 @@ header{
 
 }
 .footer__loc {
-    width: 225px;
+    width: 235px;
     font-family: Oswald;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 28px;
     letter-spacing: 0em;
-    text-align: right;
+    text-align: left;
 
 }
 
