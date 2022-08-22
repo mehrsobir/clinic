@@ -2,18 +2,23 @@
 {% block title %} Шарикони мо {% endblock %}
 
 {% block body %}
+<section class="parner">
+        <article class="news__title">Шарикони мо</article>
+        <article class="parner__blocks">
+            {% for x in partners %}
+            <div class="parner__block">
+                <img style="background: url(/static/images/{{x.img}})center / cover no-repeat;" class="parner__block-img">
+                <div class="parner__block-text">
+                    <h2 class="parner__block-title">{{x.name}}</h2>
+                    <h3 class="parner__block-h3">{{x.city}}, {{x.country}}</h3>
+                </div>
+            </div>
+            {% endfor %}
+        </article>
+</section>
 
-{% for x in partners %}
 
-<img height="200" width="300" src="/static/images/{{x.img}}" alt=""><br>
-<strong>
-    {{x.name}}
-</strong><br>
-<small>
-    {{x.city}},
-    {{x.country}}
-</small>
 
-{% endfor %}
+
 
 {% endblock %}

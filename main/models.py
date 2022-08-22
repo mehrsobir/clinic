@@ -37,11 +37,13 @@ class Doctor(models.Model):
 
 
 class About(models.Model):
-    img = models.ImageField()
-    about = models.TextField()
-    x = 'about'
+    img = models.ImageField('Сурат')
+    title = models.CharField('Ном', max_length=100)
+    txt = models.TextField('Текст')
+    bool = models.BooleanField('Тарафи рост', default=False)
+
     def __str__(self):
-        return self.x
+        return self.title
 
 
 class Partner(models.Model):

@@ -2,18 +2,26 @@
 {% block title %} Хизматрасониҳо {% endblock %}
 
 {% block body %}
+<section class="news">
+        <article class="news__title">Хизматрасониҳо</article>
+        <article class="help__blocks">
+            {% for x in services %}
+            <a class="help__block">
+                <img style="background: url(/static/images/{{x.img}}) center / cover no-repeat" class="help__block-img">
+                <div class="help__block-div">
+                    <h2 class="help__block-title">{{x.name}}</h2>
+                    <ul class="help__block-cot">
+                        <li class="help__block-text">{{x.group}}</li>
+                    </ul>
+                </div>
+            </a>
+            {% endfor %}
 
-{% for x in services %}
-<br>
-<img height="200" width="300" src="/static/images/{{x.img}}" alt=""><br>
-<strong>
-    {{x.name}}
-</strong>
-<small>
-    {{x.group}}
-</small>
+        </article>
+
+    </section>
 
 
-{% endfor %}
+
 
 {% endblock %}
