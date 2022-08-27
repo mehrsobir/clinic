@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Духтурҳо {% endblock %}
+{% block title %} Табибони мо {% endblock %}
 
 {% block body %}
 <section class="news">
@@ -16,7 +16,7 @@
                         {% endfor %}
                     </h3>
                     <p class="docs__p">{{x.about}}</p>
-                    <h3 class="docs__work">{{x.yw}}-сол таҷрибаи корӣ</h3>
+                    <h3 class="docs__work">Таҷрибаи корӣ: {{x.yw}}-сол </h3>
                 </div>
             </a>
             {% endfor %}
