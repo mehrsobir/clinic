@@ -19,7 +19,7 @@ class Service(models.Model):
     img = models.ImageField()
 
     name = models.CharField(max_length=100)
-    group = models.ForeignKey(ServiceGroup, on_delete=models.DO_NOTHING)
+    group = models.ManyToManyField(ServiceGroup)
     def __str__(self):
         return self.name
 
